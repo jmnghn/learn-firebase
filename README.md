@@ -3,6 +3,8 @@
 > [Notion](https://paullabworkspace.notion.site/Firebase-43e93768fad149ba92765940411bf55a)<br />
 > (※ 토이프로젝트나 PoC, 프로토타입용으로 사용할 목적으로 학습)
 
+[프로젝트 링크](https://mydiary-9e349.web.app/)
+
 ### 파이어베이스 🔥
 
 '아군 포병의 화력을 지원받는 기지'를 뜻하는 군사 용어.<br />
