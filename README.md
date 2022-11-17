@@ -112,7 +112,9 @@ REACT_APP_APP_ID="..."
 
 <br />
 
-#### `firebase/auth`
+## 사용 API 목록
+
+### `firebase/auth`
 
 - [`getAuth() - 인증 SDK 추가 및 초기화`](https://firebase.google.com/docs/auth/web/start?hl=ko&authuser=0#add-initialize-sdk)
 - [`createUserWithEmailAndPassword() - 신규 사용자 가입`](https://firebase.google.com/docs/auth/web/start?hl=ko&authuser=0#sign_up_new_users)
@@ -130,7 +132,7 @@ REACT_APP_APP_ID="..."
 
 <br />
 
-#### `firebase/firestore`
+### `firebase/firestore`
 
 - [`getFirestore() - Cloud Firestore 초기화`](https://firebase.google.com/docs/firestore/quickstart?hl=ko&authuser=0#initialize)
 
