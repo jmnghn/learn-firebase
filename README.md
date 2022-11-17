@@ -30,6 +30,60 @@
 개인적으로 사용하는 앱이나 이윤을 추구하지 않는 간단한 수준의 앱을 테스트할 때 사용하는 게 좋다.<br />
 당연히 엔터프라이즈 급의 앱을 만든다면 파이어베이스는 사용하지 않는다.<br />
 
+```
+$ sudo npm i -g firebase-tools
+$ firebase login
+```
+
+```
+$ firebase init
+
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/myeonghyeonjeong/Documents/learning/learn-firebase
+
+? Which Firebase features do you want to set up for this directory? Press Space to se
+lect features, then Enter to confirm your choices. Hosting: Configure files for Fireb
+ase Hosting and (optionally) set up GitHub Action deploys
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: mydiary-9e349 (MyDiary)
+i  Using project mydiary-9e349 (MyDiary)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+? What do you want to use as your public directory? build
+? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+? Set up automatic builds and deploys with GitHub? No
+? File build/index.html already exists. Overwrite? No
+i  Skipping write of build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
+✔  Firebase initialization complete!
+```
+
+```
+$ firebase deploy
+```
+
 <br />
 
 ### MyDiary Project
@@ -38,6 +92,8 @@
 
 - useContext API 및 useReducer
   > `useAuthContext` hook.
+
+<br />
 
 #### `.env`(react-scripts Depndencies)
 
@@ -63,3 +119,27 @@ REACT_APP_APP_ID="..."
 > `src/pages/Signup`, `useSignup` hook. 사용
 
 - [`signOut`](https://firebase.google.com/docs/auth/web/password-auth?hl=ko&authuser=0#next_steps)
+
+- [`signInWithEmailAndPassword() - 이메일 주소와 비밀번호로 사용자 로그인`](https://firebase.google.com/docs/auth/web/password-auth?hl=ko&authuser=0#sign_in_a_user_with_an_email_address_and_password)
+
+> `useLogin` hook.
+
+- [`onAuthStateChanged() - 현재 로그인한 사용자 가져오기`](https://firebase.google.com/docs/auth/web/manage-users?hl=ko&authuser=0#get_the_currently_signed-in_user)
+
+<br />
+
+#### `firebase/firestore`
+
+- [`getFirestore() - Cloud Firestore 초기화`](https://firebase.google.com/docs/firestore/quickstart?hl=ko&authuser=0#initialize)
+
+- `collection()`
+
+- [`addDoc() - 데이터 추가`](https://firebase.google.com/docs/firestore/quickstart?hl=ko&authuser=0#add_data)
+
+> `useFirestore` hook.
+
+- [`Timestamp class`](https://firebase.google.com/docs/reference/js/firestore_.timestamp)
+
+- [`onSnapshot() - Cloud Firestore로 실시간 업데이트 받기`](https://firebase.google.com/docs/firestore/query-data/listen)
+
+> `useCollection` hook.

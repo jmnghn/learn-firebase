@@ -1,9 +1,11 @@
 import { useState } from "react";
+import useLogin from "../../hooks/useLogin";
 import styles from "./Login.module.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { error, isPending, login } = useLogin();
 
   const handleData = (e) => {
     const { type, value } = e.target;
@@ -18,6 +20,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({ email, password });
+    login(email, password);
   };
 
   return (
@@ -41,9 +44,13 @@ const Login = () => {
           onChange={handleData}
         />
 
-        <button type="submit" className={styles.btn}>
-          로그인
-        </button>
+        {!isPending && (
+          <button type="submit" className={styles.btn}>
+            로그인
+          </button>
+        )}
+        {isPending && <p>로그인이 진행중입니다...</p>}
+        {error && <strong>{error}</strong>}
       </fieldset>
     </form>
   );
